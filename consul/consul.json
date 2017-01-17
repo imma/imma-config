@@ -1,0 +1,6 @@
+{
+  "data_dir": "/data/consul/data",
+  "client_addr": "0.0.0.0",
+  "recursor": "172.28.128.1",
+  "disable_update_check": true
+}
