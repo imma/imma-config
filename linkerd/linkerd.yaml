@@ -13,11 +13,12 @@ telemetry:
 routers:
 - protocol: http
   baseDtab: |
-    /host     => /#/io.l5d.fs;
-    /method   => /$/io.buoyant.http.anyMethodPfx/host;
-    /http/1.1 => /method;
+    /srv         => /#/io.l5d.fs;
+    /reverse/nih => /srv;
+    /host        => /$/io.buoyant.http.domainToPathPfx/reverse;
+    /http/1.1/*  => /host;
   httpAccessLog: /data/linkerd/logs/access.log
-  label: int
+  label: inst
   dstPrefix: /http
   servers:
   - port: 4140
