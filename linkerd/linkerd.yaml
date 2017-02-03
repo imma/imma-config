@@ -1,0 +1,16 @@
+namers:
+- kind: io.l5d.fs
+  rootDir: /config/linkerd/disco
+
+routers:
+- protocol: http
+  baseDtab: |
+    /host     => /io.l5d.fs;
+    /method   => /$/io.buoyant.http.anyMethodPfx/host;
+    /http/1.1 => /method;
+  httpAccessLog: logs/access.log
+  label: int
+  dstPrefix: /http
+  servers:
+  - port: 4140
+    ip: 0.0.0.0
