@@ -15,6 +15,7 @@ routers:
   baseDtab: |
     /srv                  => /#/io.l5d.fs;
     /reverse/nih          => /srv;
+    /reverse/nih:8888     => /srv;
     /host                 => /$/io.buoyant.http.domainToPathPfx/reverse;
     /http/1.1/*           => /host;
   httpAccessLog: /data/linkerd/logs/access.log
