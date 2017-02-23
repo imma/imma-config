@@ -5,22 +5,15 @@ namers:
 - kind: io.l5d.fs
   rootDir: /config/linkerd/disco
 
-telemetry:
-- kind: io.l5d.commonMetrics
-- kind: io.l5d.recentRequests
-  sampleRate: 1.0
-
 routers:
 - protocol: http
-  baseDtab: |
+  dtab: |
     /srv                  => /#/io.l5d.fs;
     /reverse/nih          => /srv;
     /reverse/nih:8888     => /srv;
-    /host                 => /$/io.buoyant.http.domainToPathPfx/reverse;
-    /http/1.1/*           => /host;
+    /svc                  => /$/io.buoyant.http.domainToPathPfx/reverse;
   httpAccessLog: /data/linkerd/logs/access.log
   label: inst
-  dstPrefix: /http
   servers:
   - port: 4140
     ip: 0.0.0.0
