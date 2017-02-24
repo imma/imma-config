@@ -1,4 +1,13 @@
 #!/bin/sh -e
 
+route add -net 172.28.129.0 netmask 255.255.255.0 gw 172.28.131.3 || true
 
-route add -net 172.28.129.0 netmask 255.255.255.0 gw 172.28.131.3
+if [ -f /config/ssh/authorized_keys ]; then
+  ln -nfs /config/ssh/authorized_keys ~ubuntu/.ssh/
+  chown -R ubuntu:ubuntu ~ubuntu/.ssh
+fi
+
+if [ -f /config/git/config ]; then
+  ln -nfs /config/git/config ~ubuntu/.gitconfig
+  chown -R ubuntu:ubuntu ~ubuntu/.gitconfig
+fi
