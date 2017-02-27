@@ -9,9 +9,7 @@ routers:
 - protocol: http
   dtab: |
     /srv                  => /#/io.l5d.fs;
-    /reverse/nih          => /srv;
-    /reverse/nih:8888     => /srv;
-    /svc                  => /$/io.buoyant.http.domainToPathPfx/reverse;
+    /svc                  => /$/io.buoyant.http.subdomainOfPfx/nih/srv
   httpAccessLog: /data/linkerd/logs/access.log
   label: inst
   servers:
