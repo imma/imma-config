@@ -10,7 +10,7 @@ routers:
 - label: nih
   protocol: http
   servers:
-  - port: 4140
+  - port: 1080
     ip: 0.0.0.0
   httpAccessLog: /data/linkerd/logs/access.log
   identifier:
