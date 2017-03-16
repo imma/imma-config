@@ -9,7 +9,8 @@ namers:
 routers:
 - protocol: http
   dtab: |
-    /svc => /#/io.l5d.consul/dc1;
+    /srv => /#/io.l5d.consul/dc1;
+    /svc => /$/io.buoyant.http.subdomainOfPfx/nih/srv;
   httpAccessLog: /data/linkerd/logs/access.log
   label: nih
   servers:
