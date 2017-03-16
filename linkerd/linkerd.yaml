@@ -7,12 +7,14 @@ namers:
   useHealthCheck: false
 
 routers:
-- protocol: http
-  dtab: |
-    /srv => /#/io.l5d.consul/dc1;
-    /svc => /$/io.buoyant.http.subdomainOfPfx/nih/srv;
-  httpAccessLog: /data/linkerd/logs/access.log
-  label: nih
+- label: nih
+  protocol: http
   servers:
   - port: 4140
     ip: 0.0.0.0
+  httpAccessLog: /data/linkerd/logs/access.log
+  identifier:
+    kind: io.l5d.header.token
+  dtab: |
+    /srv => /#/io.l5d.consul/dc1;
+    /svc => /$/io.buoyant.http.subdomainOfPfx/nih/srv;
