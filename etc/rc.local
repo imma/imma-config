@@ -3,7 +3,7 @@
 route add -net 172.28.129.0 netmask 255.255.255.0 gw 172.28.131.3 || true
 
 if [ -f /config/ssh/authorized_keys ]; then
-  install -d -o ubuntu -g ubuntu ~/ubuntu/.ssh
+  install -d -o ubuntu -g ubuntu ~ubuntu/.ssh
   ln -nfs /config/ssh/authorized_keys ~ubuntu/.ssh/
   chown -R ubuntu:ubuntu ~ubuntu/.ssh
 fi
