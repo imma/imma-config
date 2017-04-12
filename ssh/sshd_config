@@ -2,9 +2,9 @@ Port 2222
 Protocol 2
 
 HostKey /config/ssh/ssh_host_rsa_key
-HostKey /config/ssh_host_dsa_key
-HostKey /config/ssh_host_ecdsa_key
-HostKey /config/ssh_host_ed25519_key
+HostKey /config/ssh/ssh_host_dsa_key
+HostKey /config/ssh/ssh_host_ecdsa_key
+HostKey /config/ssh/ssh_host_ed25519_key
 
 UsePrivilegeSeparation no
 UseLogin no
