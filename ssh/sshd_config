@@ -35,6 +35,6 @@ TCPKeepAlive yes
 
 AcceptEnv LANG LC_*
 
-PidFile /home/ubuntu/work/sshd/etc/sshd.pid
+PidFile none
 
 Subsystem sftp /usr/lib/sftp-server
