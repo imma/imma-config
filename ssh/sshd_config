@@ -6,7 +6,7 @@ HostKey /config/ssh/ssh_host_dsa_key
 HostKey /config/ssh/ssh_host_ecdsa_key
 HostKey /config/ssh/ssh_host_ed25519_key
 
-UsePrivilegeSeparation no
+UsePrivilegeSeparation yes
 
 # Logging
 SyslogFacility AUTH
