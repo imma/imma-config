@@ -36,5 +36,3 @@ TCPKeepAlive yes
 AcceptEnv LANG LC_*
 
 PidFile none
-
-Subsystem sftp /usr/lib/sftp-server
