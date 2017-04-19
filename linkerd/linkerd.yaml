@@ -17,4 +17,6 @@ routers:
     kind: io.l5d.header.token
   dtab: |
     /srv => /#/io.l5d.consul/dc1;
+    /srv/consul => /srv/consul-ui;
+    /srv/nexus => /srv/cache;
     /svc => /$/io.buoyant.http.subdomainOfPfx/nih/srv;
