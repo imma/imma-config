@@ -1,8 +1,11 @@
+admin:
+  addr: 0.0.0.0:9992
 proxies:
-  - label: squid
-    servers:
-      - kind: io.l5d.tcp
-        addr: 0.0.0.0:3128
-    namerd:
-      url: http://namerd:4321
-      path: /svc/squid.nih
+- label: squid
+  servers:
+    - kind: io.l5d.tcp
+      addr: 0.0.0.0:3128
+  namerd:
+    url: http://namerd:4321
+    path: /svc/squid.nih
+    intervalSecs: 5
