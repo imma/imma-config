@@ -19,6 +19,7 @@ storage:
   namespaces:
     nih: |
       /srv => /#/io.l5d.consul/dc1;
+      /srv/linkerd-tcp => /srv/linkerd-tcp-admin;
       /srv/linkerd => /srv/linkerd-admin;
       /srv/namerd => /srv/namerd-admin;
       /srv/consul => /srv/consul-ui;
