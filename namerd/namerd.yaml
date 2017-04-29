@@ -17,7 +17,7 @@ namers:
 storage:
   kind: io.l5d.inMemory
   namespaces:
-    nih: |
+    default: |
       /srv => /#/io.l5d.consul/dc1;
       /srv/linkerd-tcp => /srv/linkerd-tcp-admin;
       /srv/linkerd => /srv/linkerd-admin;
