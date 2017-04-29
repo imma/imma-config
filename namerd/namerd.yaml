@@ -1,0 +1,26 @@
+admin:
+  port: 9991
+
+interfaces:
+- kind: io.l5d.thriftNameInterpreter
+  ip: 0.0.0.0
+  port: 4100
+- kind: io.l5d.httpController
+  ip: 0.0.0.0
+  port: 4321
+
+namers:
+- kind: io.l5d.consul
+  includeTag: false
+  useHealthCheck: false
+
+storage:
+  kind: io.l5d.inMemory
+  namespaces:
+    nih: |
+      /srv => /#/io.l5d.consul/dc1;
+      /srv/linkerd => /srv/linkerd-admin;
+      /srv/namerd => /srv/namerd-admin;
+      /srv/consul => /srv/consul-ui;
+      /srv/nexus => /srv/cache;
+      /svc => /$/io.buoyant.http.subdomainOfPfx/nih/srv;
