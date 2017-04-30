@@ -9,3 +9,11 @@ proxies:
     url: http://namerd:4321
     path: /svc/squid.nih
     intervalSecs: 5
+- label: linkerd
+  servers:
+    - kind: io.l5d.tcp
+      addr: 0.0.0.0:8888
+  namerd:
+    url: http://namerd:4321
+    path: /svc/linkerd-router.nih
+    intervalSecs: 5
