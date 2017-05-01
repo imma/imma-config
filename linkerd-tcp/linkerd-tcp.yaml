@@ -17,3 +17,11 @@ proxies:
     url: http://namerd:4321
     path: /svc/linkerd-router.nih
     intervalSecs: 5
+- label: openvpn
+  servers:
+    - kind: io.l5d.tcp
+      addr: 0.0.0.0:1184
+  namerd:
+    url: http://namerd:4321
+    path: /svc/openvpn.nih
+    intervalSecs: 5
