@@ -18,10 +18,11 @@ storage:
   kind: io.l5d.inMemory
   namespaces:
     default: |
-      /srv => /#/io.l5d.consul/dc1;
-      /srv/linkerd-tcp => /srv/linkerd-tcp-admin;
-      /srv/linkerd => /srv/linkerd-admin;
-      /srv/namerd => /srv/namerd-admin;
-      /srv/consul => /srv/consul-ui;
-      /srv/nexus => /srv/cache;
-      /svc => /$/io.buoyant.http.subdomainOfPfx/nih/srv;
+      /dc1 => /#/io.l5d.consul/dc1;
+      /dc1/linkerd-tcp => /dc1/linkerd-tcp-admin;
+      /dc1/linkerd => /dc1/linkerd-admin;
+      /dc1/namerd => /dc1/namerd-admin;
+      /dc1/consul => /dc1/consul-ui;
+      /dc1/nexus => /dc1/cache;
+      /dc1/monitor => /$/inet/172.28.128.1/19999;
+      /svc => /$/io.buoyant.http.subdomainOfPfx/nih/dc1;
